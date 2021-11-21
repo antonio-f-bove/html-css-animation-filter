@@ -103,6 +103,7 @@
         transform: rotate(360deg);
     }
 }
+
 .ex-11-icon {
     font-size: 60px;
 }
@@ -114,6 +115,7 @@
         transform: rotate(270deg);
     }
 }
+
 .ex-12-button, .ex-13-button {
     position: relative;
     display: block;
@@ -127,7 +129,7 @@
     text-align: center;
     text-decoration: none;
 }
-.ex-12-top-white, .ex-13-top-white {
+.ex-12-top-white {
     position: absolute;
     top: -10px;
     left: 10%;
@@ -135,11 +137,123 @@
     width: 60px;
     height: 20px;
 }
-.ex-12-bottom-white, .ex-13-bottom-white {
+.ex-12-bottom-white {
     position: absolute;
     bottom: -10px;
     right: 20%;
     background: #f5f5f5;
     width: 60px;
     height: 20px;
+}
+
+.ex-12-button:hover .ex-12-top-white {
+    animation: spostaQuelloSpazioDiSopra 2s linear;
+}
+@keyframes spostaQuelloSpazioDiSopra {
+    0% {
+        top: -10px;
+        left: 10%;
+    }
+    50% {
+        top: -10px;
+        left: 70%;
+    }
+}
+
+.ex-12-button:hover .ex-12-bottom-white {
+    animation: spostaQuelloSpazioDiSotto 2s linear;
+}
+@keyframes spostaQuelloSpazioDiSotto {
+    0% {
+        bottom: -10px;
+        right: 20%;
+    }
+    50% {
+        bottom: -10px;
+        right: calc(100% - 60px);
+    }
+}
+
+/* ho provato a mantenere uno spazioe una velocita di 
+scorrimento uniformi in verticale come in orizzontale. 
+Rimane da affinare le percentuali per evitare lo scattino 
+alla... se i quadratini partissero dagli angoli (eg. top:0 
+e left:0) diventerebbe un calcolo immediato */
+
+.ex-13-top-white {
+    position: absolute;
+    top: -15px;
+    left: 10%;
+    background: #f5f5f5;
+    width: 30px;
+    height: 30px;
+    transform: rotate(45deg);
+}
+.ex-13-bottom-white {
+    position: absolute;
+    bottom: -15px;
+    right: 20%;
+    background: #f5f5f5;
+    width: 30px;
+    height: 30px;
+    transform: rotate(45deg);
+}
+.ex-13-button:hover .ex-13-top-white {
+    animation: spazioFaiIlGiroTop 2s linear infinite;
+}
+@keyframes spazioFaiIlGiroTop {
+    0% {
+        top: -15px;
+        left: 10%;
+    }
+    36% {
+        top: -15px;
+        left: calc(100% - 15px);
+    }
+    49% {
+        top: calc(100% - 15px);
+        left: calc(100% - 15px);
+    }
+    86% {
+        top: calc(100% - 15px);
+        left: -15px;
+    }
+    99% {
+        top: -15px;
+        left: -15px;
+    }
+    100% {
+        top: -15px;
+        left: 10%;
+    }
+}
+
+.ex-13-button:hover .ex-13-bottom-white {
+    animation: spazioFaiIlGiroBottom 2s linear infinite;
+}
+@keyframes spazioFaiIlGiroBottom {
+    0% {
+        bottom: -15px;
+        right: 20%;
+    }
+    36% {
+        bottom: -15px;
+        right: calc(100% - 15px);
+    }
+    49% {
+        bottom: calc(100% - 15px);
+        right: calc(100% - 15px);
+    }
+    86% {
+        bottom: calc(100% - 15px);
+        right: -15px;
+    }
+    99% {
+        bottom: -15px;
+        right: -15px;
+    }
+    100% {
+        bottom: -15px;
+        right: 20%;
+    }
 }
